@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+// Components
+import Home from "./components/Home/Home";
+import Details from "./components/Details/Details";
+import Favorites from "./components/Favorites/Favorites";
+import Navbar from "./components/Navbar/Navbar";
+
+// UseContext
+import { Logincontext } from "./context/Context";
+
+// React Router Dom
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [selectedRow, setSelectedRow] = useState([" "]);
+  const [addedToFavorites, setaddedToFavorites] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Logincontext.Provider
+      value={{
+        loggedIn,
+        setLoggedIn,
+        selectedRow,
+        setSelectedRow,
+        addedToFavorites,
+        setaddedToFavorites
+      }}
+    >
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/details" element={<Details />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </Router>
+    </Logincontext.Provider>
   );
 }
 
