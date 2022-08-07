@@ -24,7 +24,7 @@ const Home = () => {
   const apiFetch = () => {
     axios
       .get(
-        `/v2/tickers?symbols=tBTCUSD,tETHUSD,tLTCUSD,tLTCBTC,tETHBTC,tMNAUSD,tXRPUSD,tADAUSD,tSOLUSD,tDOTUSD,tAVAX:USD,tWBTUSD,tFTTUSD,YFIUSD`
+        `https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCUSD,tETHUSD,tLTCUSD,tLTCBTC,tETHBTC,tMNAUSD,tXRPUSD,tADAUSD,tSOLUSD,tDOTUSD,tAVAX:USD,tWBTUSD,tFTTUSD,YFIUSD`
       )
       .then(
         (response) => {
