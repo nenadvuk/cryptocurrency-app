@@ -2,7 +2,7 @@
   "name": "teletrader-task",
   "version": "0.1.0",
   "proxy": "https://api-pub.bitfinex.com",
-  "homepage": "http://localhost:3000",
+  "homepage": "https://cryptocurrency-app-beige.vercel.app/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",

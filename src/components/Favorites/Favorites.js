@@ -33,7 +33,7 @@ const Favorites = () => {
   });
 
   const apiFetch = () => {
-    axios.get(`https://api-pub.bitfinex.com/v2/tickers?symbols=${arr.map((a) => a)}`).then(
+    axios.get(`/v2/tickers?symbols=${arr.map((a) => a)}`).then(
       (response) => {
         setData(response.data);
       },
